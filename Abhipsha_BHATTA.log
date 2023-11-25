@@ -1,0 +1,30 @@
+    1  sudo apt update && sudo apt upgrade -y
+    2  sudo apt install ubuntu-desktop
+    3  reboot
+    4  sudo apt install spice-vdagent spice-webdavd -y
+    5  reboot
+    6  sudo apt update
+    7  sudo apt-get install slapd ldap-utils
+    8  sudo dpkg-reconfigure slapd
+    9  sudo ldapsearch -Q -L -Y EXTERNAL -H ldapi:/// -b dc=bhatta,dc=com
+   10  service slapd status
+   11  sudo apt-get install slapd ldap-utils
+   12  sudo dpkg-reconfigure slapd
+   13  sudo ldapsearch -Q -L -Y EXTERNAL -H ldapi:/// -b dc=bhatta,dc=com
+   14  sudo slapcat
+   15  sudo tree /etc/ldap/slapd.d/ //Schema
+   16  sudo apt-get install tree
+   17  sudo tree /etc/ldap/slapd.d/ //Schema
+   18  sudo ldapsearch -Q -LLL -Y EXTERNAL -H ldapi:/// -b cn=config dn
+   19  sudo ldapsearch -Q -L -Y EXTERNAL -H ldapi:/// -s base -b cn=config olcLogLevel
+   20  vim logEnable.ldif:
+   21  sudo ldapmodify -Q -Y EXTERNAL -H ldapi:/// -f logEnable.ldif
+   22  vim logEnable.ldif:
+   23  sudo ldapmodify -Q -Y EXTERNAL -H ldapi:/// -f logEnable.ldif:
+   24  OpenLDAP slapd server logs
+   25  sudo vim /etc/rsyslog.d/10-slapd.conf
+   26  sudo systemctl restart rsyslog
+   27  vim treeCompany.ldif
+   28  sudo slapcat -b dc=bhatta,dc=com -l bhatta_backup.ldif
+   29  history
+   30  history>slapd.log
